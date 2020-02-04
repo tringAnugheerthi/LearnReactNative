@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Button } from 'react-native';
 import GoalFlatList from './Components/GoalFlatList';
 import GoalInput from './Components/GoalInput';
+import CustomButton from './TestableComponents/CustomButton';
 
 export default function App() {
 
@@ -30,19 +31,25 @@ export default function App() {
 
   return (
     <View style={styles.screen}>
-      <Button
-        title="Start Adding Goals..!"
-        onPress={() => { setIsNeedToShow(true) }}
-      />
-      <GoalInput
-        addButtonPressed={addButtonPressed}
-        cancelButtonPressed={cancelButtonPressed}
-        visible={isNeedToShow} />
-      <GoalFlatList
-        goalInfos={addedGoals}
-        onDelete={deleteGoal} />
+      <CustomButton />
     </View>
-  );
+
+  )
+  // return (
+  //   <View style={styles.screen}>
+  //     <Button
+  //       title="Start Adding Goals..!"
+  //       onPress={() => { setIsNeedToShow(true) }}
+  //     />
+  //     <GoalInput
+  //       addButtonPressed={addButtonPressed}
+  //       cancelButtonPressed={cancelButtonPressed}
+  //       visible={isNeedToShow} />
+  //     <GoalFlatList
+  //       goalInfos={addedGoals}
+  //       onDelete={deleteGoal} />
+  //   </View>
+  // );
 }
 
 const styles = StyleSheet.create({
