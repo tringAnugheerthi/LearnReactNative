@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <View style={styles.screen}>
-      <CustomButton />
+      <CustomButton label="Hello"/>
     </View>
 
   )
