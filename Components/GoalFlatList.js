@@ -17,7 +17,7 @@ const GoalFlatList = props => {
             data = {props.goalInfos}
             keyExtractor = { (itemData, index) => itemData.myOwnKey}
             renderItem = { (itemData) => (
-                        <FlatListGoalItem item = { itemData.item } onDelete = {props.onDelete.bind(this)}/>
+                        <FlatListGoalItem item = { itemData.item } onDelete = {props.onDelete}/>
                     ) 
                 }
         />

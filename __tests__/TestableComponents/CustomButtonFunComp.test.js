@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import FunctionalCustomButton from '../TestableComponents/FunctionalComponents/CustomButton';
+import FunctionalCustomButton from '../../TestableComponents/FunctionalComponents/CustomButton';
 
 /* Snapshot Serializer */
 // import {createSerializer} from 'enzyme-to-json';

@@ -8,8 +8,10 @@ import {
 
 const FlatListGoalItem = props => {
 
+    const onPressHandler = () => props.onDelete(props.item.myOwnKey)
+
     return (
-        <TouchableOpacity onPress={props.onDelete.bind(this, props.item.myOwnKey)}>
+        <TouchableOpacity onPress={onPressHandler}>
             <View style={styles.listItem}>
                 <Text>AG {props.item.value}</Text>
             </View>

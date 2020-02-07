@@ -25,7 +25,7 @@ const GoalInput = props => {
                 <Button
                     style={styles.addButton}
                     title="ADD"
-                    onPress={props.addButtonPressed.bind(this, enteredGoal)} />
+                    onPress={() => props.addButtonPressed(enteredGoal)} />
                 <Button
                     style={styles.cancelButton}
                     title="CANCEL"

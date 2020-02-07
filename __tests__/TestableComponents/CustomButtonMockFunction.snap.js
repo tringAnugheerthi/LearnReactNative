@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ClassCustomButton from '../TestableComponents/ClassComponents/CustomButton';
+import ClassCustomButton from '../../TestableComponents/ClassComponents/CustomButton';
 
 describe('ClassCustomButton', () => {
     describe('Rendering', () => {

@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ClassCustomButton from '../TestableComponents/ClassComponents/CustomButton';
+import ClassCustomButton from '../../TestableComponents/ClassComponents/CustomButton';
 import { Linking } from 'react-native';
 
 let mockOpenURL = jest.fn(() => Promise.reject('some error reason'));
 
 // 1. Set openURL module function to jest.fn
-jest.mock('../node_modules/react-native/Libraries/Linking/Linking', () => {
+jest.mock('../../node_modules/react-native/Libraries/Linking/Linking', () => {
     return {
         openURL: mockOpenURL,
     }
