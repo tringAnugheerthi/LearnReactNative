@@ -61,12 +61,12 @@ export default class App extends React.Component {
           onPress={() => this.setState({isNeedToShow: true})}
         />
         <GoalInput
-          addButtonPressed={addButtonPressed}
-          cancelButtonPressed={cancelButtonPressed}
+          addButtonPressed={this.addButtonPressed}
+          cancelButtonPressed={this.cancelButtonPressed}
           visible={isNeedToShow} />
         <GoalFlatList
           goalInfos={addedGoals}
-          onDelete={deleteGoal} />
+          onDelete={this.deleteGoal} />
       </View>
     );
   }
