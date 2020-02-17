@@ -1,6 +1,7 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import FlatListGoalItem from '../../Components/FlatListGoalItem';
+import React from 'react'
+import { shallow } from 'enzyme'
+import FlatListGoalItem from '../../Components/FlatListGoalItem'
+import toJson from 'enzyme-to-json'
 
 const testInputDict = {
     'myOwnKey': Math.random().toString,
@@ -9,27 +10,36 @@ const testInputDict = {
 
 describe('Rendering', () => {
     it('Should match snapshot', () => {
-        const component = shallow(<FlatListGoalItem item={testInputDict} />);
-        expect(component).toMatchSnapshot('Flat List Item Snapshot')
+        const component = shallow(<FlatListGoalItem item={testInputDict} />)
+        expect(toJson(component)).toMatchSnapshot('Flat List Item Snapshot')
+
     })
 })
 
-// describe('Interaction', () => {
-//     describe('On Press', () => {
-//         it('Should call on press', () => {
-//             const mockOnPress = jest.fn()
-//             const component = shallow(<FlatListGoalItem item={testInputDict} />);
-//             // const component = shallow(<FlatListGoalItem
-//             //     item={testInputDict}
-//             //     onPress={mockOnPress} />)
+describe('Interaction', () => {
+    describe('On Press', () => {
+        const mockOnPress = jest.fn()
 
-//             const componentInstance = component.instance()
-//             console.log(componentInstance)
-//             componentInstance.onPressHandler()
-//             //../../node_modules/react-native/Libraries/Components/Touchable/
-//             // component.find('TouchableOpacity').simulate('click')
-//             expect(mockOnPress).toHaveBeenCalled()
-//             expect(mockOnPress).toHaveBeenCalledTimes(1)
-//         })
-//     })
-// })
+        // const mockOnPress = () => console.log('Hello World')
+        const initialProps = {
+            item: testInputDict,
+            onDelete: mockOnPress
+        };
+
+        const component = shallow(<FlatListGoalItem {...initialProps} />)
+        it('should have Touchable Opacity Component', () => {
+            expect(component.find('TouchableOpacity').length).toEqual(1);
+        })
+
+        it('should have proper props', () => {
+            // console.log('PROPS:::', component.find('TouchableOpacity').props('onPress').onPress)
+            expect(component.find('TouchableOpacity').props().onPress).toEqual(expect.any(Function))
+        })
+
+        it('Should call on press', () => {
+            component.find('TouchableOpacity').simulate('press')
+            expect(initialProps.onDelete).toHaveBeenCalledTimes(1)
+            
+        })
+    })
+})

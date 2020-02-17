@@ -23,8 +23,9 @@ describe('ClassCustomButton', () => {
                     label="test label"
                     onPress={mockOnPress}           // 2. passing in mock function as props
                 />);
+                
                 const instance = component.instance();  // 3. getting an instance of component
-
+                console.log(component.instance())
                 // Act
                 instance.onPressHandler();          // 4. manually triggering onPressHandler()
 

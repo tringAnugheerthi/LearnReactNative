@@ -1,3 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Rendering Should match snapshot: Flat List Item Snapshot 1`] = `ShallowWrapper {}`;
+exports[`Rendering Should match snapshot: Flat List Item Snapshot 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[Function]}
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#ccc",
+        "borderColor": "black",
+        "borderWidth": 1,
+        "marginVertical": 10,
+        "padding": 10,
+        "width": "100%",
+      }
+    }
+  >
+    <Text>
+      AG 
+      Learn react native
+    </Text>
+  </View>
+</TouchableOpacity>
+`;

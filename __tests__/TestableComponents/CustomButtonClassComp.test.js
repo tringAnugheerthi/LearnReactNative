@@ -12,6 +12,7 @@ describe('CustomButton', () => {
     describe('Rendering', () => {
         it('should match to snapshot - Primary', () => {
             const classComponent = shallow(<ClassCustomButton label="test label" primary />)
+            console.log(classComponent, classComponent.props, classComponent.instance())
             expect(toJson(classComponent)).toMatchSnapshot("Primary button snapshot - classComponent")
         });
         it('should match to snapshot - Secondary', () => {
