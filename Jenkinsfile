@@ -4,12 +4,13 @@ pipeline {
             stage ('One') {
                 steps {
                     echo 'Stage One Executed...'
-                    npm run test
+                    sh 'npm install'
                 }
             }
             stage ('Two') {
                 steps {
                     echo 'Stage Two Executed'
+                     sh 'npm run test'
                   //  input('Do you want to continue?')
                 }
             }
